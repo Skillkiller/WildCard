@@ -1,0 +1,5 @@
+#Enabled: Wenn dies auf true ist können nur Spieler mit einer WildCard oder Spieler mit der Permisson "wildcard.bypass" joinen
+enabled: false
+
+#Aktiviert die Willkommens Nachricht
+message: enable

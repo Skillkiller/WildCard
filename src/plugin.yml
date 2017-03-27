@@ -7,3 +7,8 @@ website: https://thecoin.de
 depend: []
  
 main: de.skillkiller.wildcard.WildCard
+
+commands:
+  wildcard:
+    description: Erstelle WildCards
+    usage: /wildcard add [Max Use]

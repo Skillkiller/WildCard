@@ -26,7 +26,7 @@ public class MySQL
   {
     File file = new File(plugin.getDataFolder(), "mysql.yml");
     FileConfiguration cfg = YamlConfiguration.loadConfiguration(file);
-    cfg.options().header("Die Datenbank wird benötigt um alle Nachrichten und Chatlogs zu speichern");
+    cfg.options().header("Die Datenbank wird zu speichern alle Wildcards und Spieler genutzt");
     String db = "database.";
     cfg.addDefault(db + "host", "localhost");
     cfg.addDefault(db + "port", Integer.valueOf(3306));
