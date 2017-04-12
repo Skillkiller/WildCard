@@ -17,24 +17,25 @@ public class Command implements CommandExecutor{
     public boolean onCommand(CommandSender sender, org.bukkit.command.Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
         	Player p = (Player) sender;
-        	if (args.length == 2 && args[0].equals("add")) {
-        		if (testString(args[1])) {
-        			p.sendMessage(plugin.prefix + "§aWildCard wird erstellt:");
-        			String key = plugin.sqlHandler.addCard(p, Integer.parseInt(args[1]));
-        			if (key == null) {
-        				p.sendMessage(plugin.prefix + "§cEs gab einen Fehler!");
-        			} else {
-        				p.sendMessage(key);
-        			}
-        			
-        			
-        		} else {
-        			p.sendMessage(plugin.prefix + "§cFalsche Angabe für die maximale Benutzung");
-        		}
-        	} else {
-        		p.sendMessage(plugin.prefix + "§c/wildcard add [Maximale Benutzung]");
+        	if (p.hasPermission("WildCard.canAdd")) {
+            	if (args.length == 2 && args[0].equals("add") ) {
+            		if (testString(args[1])) {
+            			p.sendMessage(plugin.prefix + "§aWildCard wird erstellt:");
+            			String key = plugin.sqlHandler.addCard(p, Integer.parseInt(args[1]));
+            			if (key == null) {
+            				p.sendMessage(plugin.prefix + "§cEs gab einen Fehler!");
+            			} else {
+            				p.sendMessage(key);
+            			}
+            			
+            			
+            		} else {
+            			p.sendMessage(plugin.prefix + "§cFalsche Angabe für die maximale Benutzung");
+            		}
+            	} else {
+            		p.sendMessage(plugin.prefix + "§c/wildcard add [Maximale Benutzung]");
+            	}
         	}
-            
         }
 
         // If the player (or console) uses our command correct, we can return true

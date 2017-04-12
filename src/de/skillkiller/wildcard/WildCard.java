@@ -19,7 +19,7 @@ public class WildCard extends JavaPlugin{
 	public FileConfiguration cfg = getConfig();
 	public boolean enabled;
 	
-	final public String prefix = "§[§9WildCard§8]§r ";
+	final public String prefix = "§8[§9WildCard§8]§r ";
 	
 	@Override
 	public void onEnable() {

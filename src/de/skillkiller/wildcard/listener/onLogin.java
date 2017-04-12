@@ -23,7 +23,8 @@ public class onLogin implements Listener {
 			if(p.hasPermission("WildCard.bypass") || plugin.sqlHandler.hasWildcard(p)) {
 				e.allow();
 			} else {
-				e.disallow(Result.KICK_WHITELIST, "NOPE");
+				e.disallow(Result.KICK_WHITELIST, "\n §6Dir §cscheint es nicht erlaubt zu sein den Server zu betreten!\n"
+						+ "§9Falls du eine Wildcard besitzt dann löse sie auf §6http://thecoin.de §9ein");
 			}
 		} else {
 			e.allow();

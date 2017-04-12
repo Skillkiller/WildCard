@@ -23,7 +23,7 @@ public class onJoin implements Listener{
 				p.sendMessage(plugin.prefix + "§aWillkommen auf dem Server.");
 				
 				// pZahl > 0 ? pZahl+" ist positiv." : pZahl+" ist negativ oder 0."
-				p.sendMessage(plugin.prefix + "§7Wildcard§8: §6" + plugin.sqlHandler.getWildCardbyPlayer(p) == null ? "keine" : plugin.sqlHandler.getWildCardbyPlayer(p));
+				p.sendMessage(plugin.prefix + "§7Wildcard§8: §6" + (plugin.sqlHandler.getWildCardbyPlayer(p) == null ? "keine" : plugin.sqlHandler.getWildCardbyPlayer(p)));
 				p.sendMessage(plugin.prefix + "§7Rechte§8: " + (p.hasPermission("WildCard.bypass") == true ? "Ja" : "Nein"));
 			}
 		}

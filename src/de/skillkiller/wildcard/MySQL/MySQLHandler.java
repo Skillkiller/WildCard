@@ -76,8 +76,12 @@ public class MySQLHandler {
 			st.setString(1, p.getName());
 			ResultSet rs = st.executeQuery();
 			
-			rs.first();
-			return rs.getString("card");
+			if (rs.next()) {
+				rs.first();
+				return rs.getString("card");
+			} else {
+				return null;
+			}
 			
 		} catch (SQLException e) {
 			plugin.getLogger().log(Level.WARNING, e.getMessage(), e);
