@@ -1,8 +1,8 @@
 #Enabled: Wenn dies auf true ist können nur Spieler mit einer WildCard oder Spieler mit der Permisson "wildcard.bypass" joinen
-enabled: false
+enabled: true
 
 #Prefix der beim Kicken angezeigt wird
-kickmessage: "Wenn du eine &6WildCard &rbesitzt dann löse sie ein!"
+kickmessage: "Wenn du eine &6WildCard &rbesitzt dann loese sie ein!"
 
 url: "https://api.thecoin.de/WildCard"
 
