@@ -4,6 +4,12 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import net.md_5.bungee.api.chat.ClickEvent;
+import net.md_5.bungee.api.chat.ClickEvent.Action;
+import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.md_5.bungee.api.chat.HoverEvent;
+import net.md_5.bungee.api.chat.TextComponent;
+
 public class Command implements CommandExecutor{
 
 	private WildCard plugin;
@@ -25,7 +31,14 @@ public class Command implements CommandExecutor{
             			if (key == null) {
             				p.sendMessage(plugin.prefix + "§cEs gab einen Fehler!");
             			} else {
-            				p.sendMessage(key);
+            				
+            				TextComponent tc = new TextComponent();
+            	            tc.setText(plugin.prefix + "§aKey§8: §r" + key);
+            	            tc.setItalic(true);
+            	            tc.setClickEvent(new ClickEvent(Action.OPEN_URL, plugin.getConfig().getString("url") + "/clicktocopy.php?copy=" + key));
+            	            tc.setHoverEvent(new HoverEvent(net.md_5.bungee.api.chat.HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Externes Kopieren").create()));
+            	            p.spigot().sendMessage(tc);
+            				
             			}
             			
             			

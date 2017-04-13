@@ -1,5 +1,6 @@
 package de.skillkiller.wildcard.listener;
 
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -23,8 +24,7 @@ public class onLogin implements Listener {
 			if(p.hasPermission("WildCard.bypass") || plugin.sqlHandler.hasWildcard(p)) {
 				e.allow();
 			} else {
-				e.disallow(Result.KICK_WHITELIST, "\n §6Dir §cscheint es nicht erlaubt zu sein den Server zu betreten!\n"
-						+ "§9Falls du eine Wildcard besitzt dann löse sie auf §6http://thecoin.de §9ein");
+				e.disallow(Result.KICK_WHITELIST, ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("kickmessage")));
 			}
 		} else {
 			e.allow();
